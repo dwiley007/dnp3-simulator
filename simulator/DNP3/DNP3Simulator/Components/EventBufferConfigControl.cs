@@ -48,7 +48,7 @@ namespace Automatak.Simulator.DNP3.Components
                 int i = 0;
                 foreach (ListViewItem item in listView1.Items)
                 {
-                    var value = UInt32.Parse(item.SubItems[1].Text);
+                    var value = ushort.Parse(item.SubItems[1].Text);
                     SetValue(config, i, value);
                     ++i;            
                 }
@@ -57,7 +57,7 @@ namespace Automatak.Simulator.DNP3.Components
             }
         }
 
-        void SetValue(EventBufferConfig config, int index, UInt32 value)
+        void SetValue(EventBufferConfig config, int index, ushort value)
         { 
             switch(index)
             {

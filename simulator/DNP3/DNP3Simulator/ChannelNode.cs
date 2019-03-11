@@ -41,27 +41,8 @@ namespace Automatak.Simulator.DNP3
 
             this.masterFactory = new ActionNodeFactory("Add Master", cb => CreateMaster(cb));
             this.outstationFactory = new ActionNodeFactory("Add Outstation", cb => CreateOutstation(cb));
-
-
-            this.channel.AddStateListener(state => callbacks.ChangeState(GetNodeState(state)));
         }
-
         
-        static NodeState GetNodeState(ChannelState state)
-        {
-            switch (state)
-            { 
-                case(ChannelState.OPENING):
-                    return NodeState.Inactive;
-                case (ChannelState.WAITING):
-                    return NodeState.Failed;
-                case (ChannelState.OPEN):
-                    return NodeState.Active;                
-                default:
-                    return NodeState.Inactive;
-            }
-        }        
-
         ISimulatorNode CreateMaster(ISimulatorNodeCallbacks callbacks)
         {
             using (var dialog = new Components.MasterDialog())

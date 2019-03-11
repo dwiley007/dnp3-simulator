@@ -74,7 +74,7 @@ namespace Automatak.Simulator.DNP3
                 dialog.ShowDialog();
                 if (dialog.DialogResult == DialogResult.OK)
                 {
-                    var channel = dialog.ChannelAction.Invoke(manager);
+                    var channel = dialog.ChannelAction.Invoke(manager, callbacks);
                     return new ChannelNode(config, channel, callbacks, dialog.SelectedAlias);
                 }
                 else

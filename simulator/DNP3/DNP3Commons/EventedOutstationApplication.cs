@@ -116,6 +116,10 @@ namespace Automatak.Simulator.DNP3.Commons
 
         void ILinkStatusListener.OnKeepAliveSuccess() { }
 
+        void ILinkStatusListener.OnUnknownDestinationAddress(ushort destination) { }
+
+        void ILinkStatusListener.OnUnknownSourceAddress(ushort source) { }
+
         bool IOutstationApplication.SupportsWriteAbsoluteTime
         {
             get { return supportsWriteAbsoluteTime; }

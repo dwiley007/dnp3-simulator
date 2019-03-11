@@ -193,6 +193,9 @@ namespace Automatak.Simulator.DNP3.Commons
             timeAndIntervals.Update(update.ToMeasurement(index, TimestampMode.SYNCHRONIZED));            
         }
 
+        void IDatabase.Update(OctetString update, ushort index, EventMode mode)
+        {
+        }
 
         void ISOEHandler.Process(HeaderInfo info, IEnumerable<IndexedValue<Binary>> values)
         {

@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Automatak.Simulator.DNP3</RootNamespace>
     <AssemblyName>SimulatorDNP3</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -67,13 +68,11 @@
     <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DNP3CLRAdapter, Version=1.0.6005.33625, Culture=neutral, processorArchitecture=x86">
-      <HintPath>..\..\..\packages\opendnp3.2.2.0-M1\lib\net45\DNP3CLRAdapter.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="DNP3CLRAdapter, Version=1.0.6879.30794, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\..\..\packages\opendnp3.2.3.0-M1\lib\net45\DNP3CLRAdapter.dll</HintPath>
     </Reference>
     <Reference Include="DNP3CLRInterface, Version=2.0.1.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\opendnp3.2.2.0-M1\lib\net45\DNP3CLRInterface.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\..\packages\opendnp3.2.3.0-M1\lib\net45\DNP3CLRInterface.dll</HintPath>
     </Reference>
     <Reference Include="SimulatorUI">
       <HintPath>..\..\SimulatorUI\obj\Release\SimulatorUI.dll</HintPath>
@@ -90,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BundledPlugins\StringCallback.cs" />
+    <Compile Include="ChannelListener.cs" />
     <Compile Include="Components\AnalogOutputControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -251,6 +251,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\MasterConfigControl.resx">
       <DependentUpon>MasterConfigControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\OutstationModuleDialog.resx">
       <DependentUpon>OutstationModuleDialog.cs</DependentUpon>
